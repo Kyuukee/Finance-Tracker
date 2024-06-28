@@ -1,0 +1,43 @@
+
+print("Please enter your monthly expenses...")
+
+def expenses_input(prompt):
+    user_input = input(prompt)
+    if user_input == "":
+        print("That is not a valid input!")
+    elif user_input < 0.0:
+        print("There's no way you're that broke!")
+    else:
+        pass
+
+    expenses = {
+        'Food': int(input("Food: $")),
+        'Rent/Utilities': float(input("Rent/Utilities: $")),
+        'Car Insurance': float(input("Car Insurance: $")),
+        'Phone Bill': float(input("Phone Bill: $")),
+        'Credit Card Debt': float(input("Credit Card Debt: $")),
+        'Random': float(input("Random: $"))
+    }
+
+pay = float(input("Pay: $"))
+
+monthly_expenses = sum(expenses.values())
+weekly_expenses = monthly_expenses / 4
+yearly_expenses = weekly_expenses * 52
+monthly_savings = pay - monthly_expenses
+weekly_savings = monthly_savings / 4
+yearly_savings = weekly_savings * 52
+
+
+print(f"\nTotal Weekly Expenses: ${weekly_expenses}")
+print("-------------------------------")
+print(f"Total Monthly Expenses: ${monthly_expenses}")
+print("-------------------------------")
+print(f"Total Yearly Expenses: ${yearly_expenses}")
+print("-------------------------------")
+print(f"Potential Weekly Savings: ${weekly_savings}")
+print("-------------------------------")
+print(f"Potential Monthly Savings: ${monthly_savings}")
+print("-------------------------------")
+print(f"Potential Yearly Savings: ${yearly_savings}")
+
